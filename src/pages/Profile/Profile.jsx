@@ -1,7 +1,11 @@
 import { useState } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate, useLocation } from 'react-router-dom';
 
 export const Profile = (props) => {
+	const dataPassed = useLocation().state;
+
+	console.log(dataPassed);
+
 	const navigate = useNavigate();
 	const [user, setUser] = useState({ name: 'adam', age: 19 });
 
@@ -18,8 +22,8 @@ export const Profile = (props) => {
 
 	return (
 		<div>
-			<h2>{user.name}</h2>
-			<h3>{user.age}</h3>
+			<h2>{dataPassed?.name}</h2>
+			<h3>{dataPassed?.age}</h3>
 
 			<button onClick={handleLogout}>Log out</button>
 		</div>

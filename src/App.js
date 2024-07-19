@@ -15,7 +15,7 @@ import { NotFound } from './pages/404Page/404Page';
 import { Friend } from './components/Friend/FriendPage';
 
 function App() {
-	const [isLoggedIn, setIsLoggedIn] = useState(false);
+	const [isLoggedIn, setIsLoggedIn] = useState(true);
 
 	const toggleLoggedIn = () => {
 		setIsLoggedIn(!isLoggedIn);

@@ -6,7 +6,9 @@ export const Navbar = () => {
 		<div className="nav">
 			<Link to="/">Home</Link>
 			<Link to="friends">Friends</Link>
-			<Link to="profile">Profile</Link>
+			<Link to="profile" state={{ name: 'adam', age: 29 }}>
+				Profile
+			</Link>
 		</div>
 	);
 };
