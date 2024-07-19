@@ -12,6 +12,7 @@ import { Friends } from './pages/Friends/Friends';
 import { Profile } from './pages/Profile/Profile';
 import { Navbar } from './components/Navbar/Navbar';
 import { NotFound } from './pages/404Page/404Page';
+import { Friend } from './components/Friend/FriendPage';
 
 function App() {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -26,7 +27,10 @@ function App() {
 				<Navbar />
 				<Routes>
 					<Route path="/" element={<Home toggleLoggedIn={toggleLoggedIn} />} />
-					<Route path="/friends" element={<Friends />} />
+					<Route path="/friends">
+						<Route path="/friends/" element={<Friends />} />
+						<Route path="/friends/:id" element={<Friend />} />
+					</Route>
 					<Route
 						path="/profile"
 						element={
